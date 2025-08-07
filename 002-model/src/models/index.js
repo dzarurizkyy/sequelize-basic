@@ -1,7 +1,7 @@
 import db from "../utils/db.js"
-import User from "./user-model-2.js"
+import UserAttributes from "./user-model-2.js"
 
-scrollBy.define("User", User, { tableName: "users" })
+const User = db.define("User", UserAttributes, { tableName: "users" })
 db.sync()
 
-export default scrollBy;
+export { db, User };

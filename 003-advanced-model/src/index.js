@@ -15,10 +15,22 @@ app.get("/", (req, res) => {
 })
 
 app.get("/insert", (req, res) => {
-    User.create({
-        username: "dzarurizky",
+    // User.create({
+    //     userName: "dzarurizky",
+    //     email: "dzarurizkybusiness@gmail.com",
+    // }).then((data) => {
+    //     res.send(data)
+    // })
+
+    let user = User.build({
+        userName: "dzarurizky",
         email: "dzarurizkybusiness@gmail.com",
-    }).then((data) => {
+    });
+
+    user.userName = "Dzaru Rizky Fathan Fortuna"
+    user.email = "dzarurizky@gmail.com"
+
+    user.save().then((data) => {
         res.send(data)
     })
 })
